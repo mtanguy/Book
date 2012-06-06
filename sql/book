@@ -1,0 +1,44 @@
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL';
+
+CREATE SCHEMA IF NOT EXISTS `Book-collection` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci ;
+USE `Book-collection` ;
+
+-- -----------------------------------------------------
+-- Table `Book-collection`.`book`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `Book-collection`.`book` (
+  `idbook` INT NULL AUTO_INCREMENT ,
+  `book_title` VARCHAR(45) NULL ,
+  `book_release` VARCHAR(45) NULL ,
+  `book_collection` VARCHAR(45) NULL ,
+  `book_edition` VARCHAR(45) NULL ,
+  PRIMARY KEY (`idbook`) )
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = big5;
+
+
+-- -----------------------------------------------------
+-- Table `Book-collection`.`book-auteur`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `Book-collection`.`book-auteur` (
+  `idbook-auteur` INT NOT NULL ,
+  `auteur_firstname` VARCHAR(45) NULL ,
+  `auteur_name` VARCHAR(45) NULL ,
+  `auteur_bibliography` MEDIUMTEXT NULL ,
+  `book_idbook` INT NOT NULL ,
+  PRIMARY KEY (`idbook-auteur`, `book_idbook`) ,
+  INDEX `fk_book-auteur_book` (`book_idbook` ASC) ,
+  CONSTRAINT `fk_book-auteur_book`
+    FOREIGN KEY (`book_idbook` )
+    REFERENCES `Book-collection`.`book` (`idbook` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
