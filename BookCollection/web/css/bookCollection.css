@@ -28,12 +28,13 @@ body {
 }
 
 #logoText {
-    float: left;
-    margin: 20px 0 0 70px;
+    float:  left;
+    margin: 50px 0 0 35px;
     /* font styles apply to text within alt tags */
     font-family: 'American Typewriter', Courier, monospace;
     font-size: 50px;
     color: #333;
+    text-align: center;
 }
 
 #widgetBar {
@@ -50,6 +51,21 @@ body {
     float: right;
     line-height: 25px;
     background: #aaa;
+}
+
+.categoryBox {
+    height: 350px;
+    width: 212px;
+    margin: 25px 14px 6px;
+    float: inherit;
+    background: #ccc;
+}
+
+.categoryLabelText {
+    margin-top: 60px;
+    line-height: 350%;
+    font-size: 200%;
+    text-align: center;
 }
 #footer {
     height: 60px;

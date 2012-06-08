@@ -32,7 +32,7 @@
                         <img src="#" id="logo" alt="Book Collection logo">
                     </a>
 
-                    <img src="#" id="logoText" alt="Book Collection">
+                    <img src="#" id="logoText" alt="The Book Collection">
                 </div>
 
                 <div id="indexLeftColumn">
@@ -40,7 +40,18 @@
                 </div>
 
                 <div id="indexRightColumn">
-                    right column
+                   
+                    <div class="categoryBox">
+                        <a href="#">
+                            <span class="categoryLabelText"> ENQUETES ET SUSPENSES </span>
+                        </a>
+                    </div>
+                    <div class="categoryBox">
+                        <a href="#">
+                            <span class="categoryLabelText">POL'ART</span>
+                        </a>
+                    </div>
+                   
                 </div>
 
                 <div id="footer">
